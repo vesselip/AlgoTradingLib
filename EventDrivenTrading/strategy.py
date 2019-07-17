@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # strategy.py
-
-from __future__ import print_function
-
 from abc import ABCMeta, abstractmethod
 import datetime
 try:
@@ -35,7 +32,7 @@ class Strategy(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def calculate_signals(self):
+    def calculate_signals(self, event):
         """
         Provides the mechanisms to calculate the list of signals.
         """

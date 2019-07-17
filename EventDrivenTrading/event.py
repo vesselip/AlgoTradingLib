@@ -3,9 +3,6 @@
 
 # event.py
 
-from __future__ import print_function
-
-
 class Event(object):
     """
     Event is base class providing an interface for all subsequent 

@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # ib_execution.py
-
-from __future__ import print_function
-
 import datetime
 import time
 

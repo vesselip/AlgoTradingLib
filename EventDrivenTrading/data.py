@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # data.py
-
-from __future__ import print_function
-
 from abc import ABCMeta, abstractmethod
 import datetime
 import os, os.path
@@ -120,14 +117,14 @@ class HistoricCSVDataHandler(DataHandler):
         comb_index = None
         for s in self.symbol_list:
             # Load the CSV file with no header information, indexed on date
-            self.symbol_data[s] = pd.io.parsers.read_csv(
+            self.symbol_data[s] = pd.read_csv(
                 os.path.join(self.csv_dir, '%s.csv' % s),
                 header=0, index_col=0, parse_dates=True,
                 names=[
                     'datetime', 'open', 'high', 
                     'low', 'close', 'volume', 'adj_close'
                 ]
-            ).sort()
+            )
 
             # Combine the index to pad forward values
             if comb_index is None:

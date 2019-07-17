@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # portfolio.py
-
-from __future__ import print_function
-
 import datetime
 from math import floor
 try:

@@ -58,7 +58,7 @@ class MovingAverageCrossStrategy(Strategy):
             for symbol in self.symbol_list:
                 bars = self.bars.get_latest_bars_values(symbol, "close", N=self.long_window)               
 
-                if bars is not None and bars != []:
+                if bars.size > 0 and bars != []:
                     short_sma = np.mean(bars[-self.short_window:])
                     long_sma = np.mean(bars[-self.long_window:])
 
@@ -81,8 +81,8 @@ class MovingAverageCrossStrategy(Strategy):
 
 
 if __name__ == "__main__":
-    csv_dir = REPLACE_WITH_YOUR_CSV_DIR_HERE
-    symbol_list = ['AAPL']
+    csv_dir = 'data'
+    symbol_list = ['GOOG']
     initial_capital = 100000.0
     start_date = datetime.datetime(1990,1,1,0,0,0)
     heartbeat = 0.0
