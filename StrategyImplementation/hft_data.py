@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # hft_data.py
-
-from __future__ import print_function
-
 from abc import ABCMeta, abstractmethod
 import datetime
 import os, os.path

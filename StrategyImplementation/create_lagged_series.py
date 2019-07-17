@@ -7,7 +7,7 @@ import datetime
 
 import numpy as np
 import pandas as pd
-from pandas.io.data import DataReader
+import pandas_datareader as pdr
 
 
 def create_lagged_series(symbol, start_date, end_date, lags=5):
@@ -21,7 +21,7 @@ def create_lagged_series(symbol, start_date, end_date, lags=5):
     """
 
     # Obtain stock information from Yahoo Finance
-    ts = DataReader(
+    ts = pdr.DataReader(
     	symbol, "yahoo", 
     	start_date-datetime.timedelta(days=365), 
     	end_date

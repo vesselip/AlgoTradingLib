@@ -2,13 +2,10 @@
 # -*- coding: utf-8 -*-
 
 # snp_forecast.py
-
-from __future__ import print_function
-
 import datetime
 
 import pandas as pd
-from sklearn.qda import QDA
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 
 from strategy import Strategy
 from event import SignalEvent
@@ -61,7 +58,7 @@ class SPYDailyForecastStrategy(Strategy):
         y_train = y[y.index < start_test]
         y_test = y[y.index >= start_test]
        
-        model = QDA()
+        model = QuadraticDiscriminantAnalysis()
         model.fit(X_train, y_train)
         return model
 

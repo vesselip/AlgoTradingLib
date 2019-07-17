@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # mac.py
-
-from __future__ import print_function
-
 import datetime
 
 import numpy as np
@@ -95,8 +92,8 @@ class MovingAverageCrossStrategy(Strategy):
 
 
 if __name__ == "__main__":
-    csv_dir = '/path/to/your/csv/file'  # CHANGE THIS!
-    symbol_list = ['AAPL']
+    csv_dir = 'data'  # CHANGE THIS!
+    symbol_list = ['GOOG']
     initial_capital = 100000.0
     heartbeat = 0.0
     start_date = datetime.datetime(1990, 1, 1, 0, 0, 0)
